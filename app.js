@@ -10,9 +10,9 @@ app.get("/", async (req, res, next) => {
 });
 
 app.use(async (req, res, next) => {
-  const error = new Error("Not Found");
-  error.status = 404;
-  next(error);
+  //   const error = new Error("Not Found");
+  //   error.status = 404;
+  next(createError.NotFound("Request could Not Found"));
 });
 
 app.use((err, req, res, next) => {
