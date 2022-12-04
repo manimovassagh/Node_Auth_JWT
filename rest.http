@@ -5,8 +5,14 @@ GET http://localhost:3000
 
 
 ###
-//register
+
 POST http://localhost:3000/auth/register
+content-type: application/json
+
+{
+    "email": "mani.mgh@gmail.com",
+    "password":"testpassword"
+}
 ###
 POST http://localhost:3000/auth/login
 ###
