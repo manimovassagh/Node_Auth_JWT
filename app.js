@@ -10,7 +10,6 @@ const AuthRoute = require("./routes/Auth.route");
 app.get("/", async (req, res, next) => {
   res.send("Salam Mani");
 });
-
 app.use("/auth", AuthRoute);
 
 app.use(async (req, res, next) => {

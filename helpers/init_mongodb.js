@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017", {
-    dbName: "auth_tutorial",
+  .connect(process.env.MONGODB_URI, {
+    dbName: process.env.DB_NAME,
   })
   .then(() => {
     console.log("Connected To MongoDB Instance ...");
