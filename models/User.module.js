@@ -7,4 +7,9 @@ const UserSchema = new Schema({
     lowercase: true,
     unique: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
 });
+const User = mongoose.Model("user", UserSchema);
