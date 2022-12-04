@@ -1,18 +1,20 @@
 const express = require("express");
 const morgan = require("morgan");
 const createError = require("http-errors");
+const router = require("./routes/Auth.route");
 require("dotenv").config();
 
 const app = express();
 
+const AuthRoute = require("./routes/Auth.route");
 app.get("/", async (req, res, next) => {
   res.send("Salam Mani");
 });
 
+app.use("/auth", AuthRoute);
+
 app.use(async (req, res, next) => {
-  //   const error = new Error("Not Found");
-  //   error.status = 404;
-  next(createError.NotFound("This Controller is not exist"));
+  next(createError.NotFound());
 });
 
 app.use((err, req, res, next) => {
