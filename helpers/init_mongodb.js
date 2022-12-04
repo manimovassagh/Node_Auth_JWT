@@ -20,6 +20,8 @@ mongoose.connection.on("error", (err) => {
 mongoose.connection.on("disconnected", () => {
   console.log("Mongodb Is disconnected");
 });
+
+//handle close databse
 process.on("SIGINT", async () => {
   await mongoose.connection.close();
   process.exit(0);
