@@ -5,6 +5,7 @@ GET http://localhost:3000
 
 
 ###
+//register
 POST http://localhost:3000/auth/register
 ###
 POST http://localhost:3000/auth/login
