@@ -5,7 +5,7 @@ const router = require("./routes/Auth.route");
 require("dotenv").config();
 
 const app = express();
-
+app.use(morgan('dev'))
 const AuthRoute = require("./routes/Auth.route");
 app.get("/", async (req, res, next) => {
   res.send("Salam Mani");
