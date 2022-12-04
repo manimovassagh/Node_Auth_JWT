@@ -5,11 +5,14 @@ require("dotenv").config();
 
 const app = express();
 
+const obj = {
+  name: "mani",
+  age: "44",
+};
 
-
-app.get('/',async(req,res,next)=>{
-    res.send('salam')
-} )
+app.get("/", async (req, res, next) => {
+  res.send(obj);
+});
 
 const PORT = process.env.port || 3000;
 
