@@ -12,7 +12,7 @@ router.post("/register", async (req, res, next) => {
     if (!email || !password) throw createError.BadRequest();
     const doesExist = await User.findOne({ email: email });
     if (doesExist)
-      throw createError.Conflict("This Email is already been registered !!! ");
+      throw createError.Conflict(email +" is already been registered !!! ");
 
     const user = new User({ email, password });
     const savedUser = await user.save(user);
