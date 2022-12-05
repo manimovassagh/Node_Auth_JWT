@@ -3,6 +3,7 @@ const router = express.Router();
 
 router.post("/register", async (req, res, next) => {
   res.send("This is register route");
+  console.log(req.body);
 });
 router.post("/login", async (req, res, next) => {
   res.send("login route");

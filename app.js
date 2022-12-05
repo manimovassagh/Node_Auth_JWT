@@ -4,8 +4,12 @@ const createError = require("http-errors");
 const router = require("./routes/Auth.route");
 require("dotenv").config();
 require("./helpers/init_mongodb");
+
 const app = express();
+app.use(express.json());
 app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
+
 const AuthRoute = require("./routes/Auth.route");
 app.get("/", async (req, res, next) => {
   res.send("Salam Mani");
